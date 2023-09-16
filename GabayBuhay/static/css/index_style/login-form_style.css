@@ -1,0 +1,92 @@
+/* CSS for the registration form popup */
+.login-form-popup {
+    display: none;
+    position: fixed; /* Set to fixed positioning */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    width: 90%; /* Adjust the width as desired */
+    max-width: 480px; /* Limit maximum width */
+    max-height: 55%; /* Limit maximum height */
+    overflow-y: auto; /* Enable vertical scrolling if the content overflows */
+}
+
+.header-row {
+ /* Background color for the header row */
+    border-radius: 10px 10px 0 0; /* Rounded corners for the top */
+    margin-bottom: 20px;
+}
+
+
+.login-form-popup h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.login-form-popup .input-field {
+    margin-bottom: 15px;
+}
+
+.login-form-popup label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.login-form-popup input[type="text"],
+.login-form-popup input[type="email"],
+.login-form-popup input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.login-form-popup select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.login-form-popup input[type="submit"] {
+    background-color: #5CC9CD;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 30px;
+    margin-top: 15px; /* Adjust the distance from the top 
+    */
+     
+}
+
+.login-form-popup .submit:hover {
+    background-color: #046a76;
+}
+
+.login-form-popup .signin {
+    margin: 20px;
+    text-align: center; /* Center the "Already have an account" text */
+}
+
+.login-form-popup .signin a {
+    text-decoration: none;
+    color: #5CC9CD;
+    font-weight: bold;
+}
+
+.login-form-popup .signin a:hover {
+    text-decoration: underline;
+    color: #046a76;
+}

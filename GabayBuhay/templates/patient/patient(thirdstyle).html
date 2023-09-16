@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/users/patient/patient_clinical_solutions.css') }}">
+{% endblock head %}
+{% block title %}Patient - Clinical Solutions{% endblock title %}
+{% block nav_button %}
+    <div>
+        <p class="nav-link link-dark">Welcome {{ patient_data['first_name'][0] }}</p>
+    </div>
+
+    <div class="col-md-2 text-end position-relative">
+        <a href="#" class="btn text-light" id="log-in">Log-out</a>
+    </div>
+{% endblock nav_button %}
+
+{% block content %}
+
+ 
+  
+    <div class="container">
+	<div class="row mb-4 align-items-center">
+		<div class="col-lg-6 mb-4 mb-lg-0">
+			<div class="lc-block text-center">
+				<img class="img-fluid w-50" src="{{url_for('static', filename='imgs_&_svgs/See_A_Doctor.svg')}}" srcset="" sizes="" width="" height="">
+			</div><!-- /lc-block -->
+		</div><!-- /col -->
+		<div class="col-lg-6 p-lg-6">
+			<div class="lc-block mb-5">
+				<div editable="rich">
+
+					<h2 class="display-6 fw-bold">Boost your Creativity</h2>
+
+					<p class="lead"><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a lacus est. Etiam diam metus.</p>
+				</div>
+			</div><!-- /lc-block -->
+			<!-- /lc-block -->
+			<div class="lc-block">
+				<div class="d-inline-flex">
+					<div>
+						<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="text-primary" viewBox="0 0 16 16" lc-helper="svg-icon">
+							<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+						</svg>
+					</div>
+
+					<div class="ms-3 align-self-center" editable="rich">
+						<p>Lorem ipsum dolor sit amet</p>
+					</div>
+				</div>
+			</div>
+			<div class="lc-block">
+				<div class="d-inline-flex">
+					<div>
+						<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="text-primary" viewBox="0 0 16 16" lc-helper="svg-icon">
+							<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+						</svg>
+					</div>
+
+					<div class="ms-3 align-self-center" editable="rich">
+						<p>Consectetur adipiscing elit.</p>
+					</div>
+				</div>
+			</div>
+			<div class="lc-block">
+				<div class="d-inline-flex">
+					<div>
+						<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="text-primary" viewBox="0 0 16 16" lc-helper="svg-icon">
+							<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+						</svg>
+					</div>
+
+					<div class="ms-3 align-self-center" editable="rich">
+						<p>Aenean vel nisi in ipsum congue</p>
+					</div>
+				</div>
+			</div><!-- /lc-block -->
+		</div><!-- /col -->
+	</div>
+	<div class="row mb-4 align-items-center">
+		<div class="col-lg-6 mb-4 mb-lg-0 order-lg-1">
+			<div class="lc-block text-center">
+				<img class="img-fluid w-50" src="{{url_for('static', filename='imgs_&_svgs/See_A_Doctor.svg')}}" srcset="" sizes="" width="" height="">
+			</div><!-- /lc-block -->
+		</div><!-- /col -->
+		<div class="col-lg-6 p-lg-6">
+			<div class="lc-block mb-5">
+				<div editable="rich">
+
+					<h2 class="display-6 fw-bold">Increase your Sales</h2>
+
+					<p class="lead"><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a lacus est. Etiam diam metus.</p>
+				</div>
+			</div><!-- /lc-block -->
+			<!-- /lc-block -->
+			<div class="lc-block">
+				<div class="d-inline-flex">
+					<div>
+						<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="text-primary" viewBox="0 0 16 16" lc-helper="svg-icon">
+							<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+						</svg>
+					</div>
+
+					<div class="ms-3 align-self-center" editable="rich">
+						<p>Lorem ipsum dolor sit amet</p>
+					</div>
+				</div>
+			</div>
+			<div class="lc-block">
+				<div class="d-inline-flex">
+					<div>
+						<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="text-primary" viewBox="0 0 16 16" lc-helper="svg-icon">
+							<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+						</svg>
+					</div>
+
+					<div class="ms-3 align-self-center" editable="rich">
+						<p>Consectetur adipiscing elit.</p>
+					</div>
+				</div>
+			</div>
+			<div class="lc-block">
+				<div class="d-inline-flex">
+					<div>
+						<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="text-primary" viewBox="0 0 16 16" lc-helper="svg-icon">
+							<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+						</svg>
+					</div>
+
+					<div class="ms-3 align-self-center" editable="rich">
+						<p>Aenean vel nisi in ipsum congue</p>
+					</div>
+				</div>
+			</div><!-- /lc-block -->
+		</div><!-- /col -->
+	</div>
+
+</div> 
+ 
+  
+
+{% endblock content %}

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {# super() the index.html inherits the contents of basehtml head block #}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index_style/style.css') }}">
+
+{% endblock head %}
+
+{% block title %}GabayBuhay{% endblock title %}
+
+{% block content %}
+
+<div class="row flex-lg-row-reverse align-items-center g-5 py-5 first">
+        <div class="col-10 col-sm-8 col-lg-6">
+            <img src="{{url_for('static', filename='imgs_&_svgs/derma.svg')}}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+        </div>
+
+        <div class="col-lg-6 py-5 px-5">
+            <h1 class="display-6 fw-bold lh-3 mb-3 text-wrap" style="font-family: 'Questrial', sans-serif;"> <b> Unlocking dermatological wisdom through information, guiding everyone with clinical decisions.</b></h1>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <button id="getStartedBtn" type="button" class="btn btn-primary btn-lg px-4 me-md-2">Get Started</button>
+            </div>
+        </div>
+
+        {# REGISTRATION FORM #}
+        {# When user clicks get started, this will pop up#}
+        {% include "index/registration-form.html" %}
+        {% include "index/login-form.html" %}
+        <div id="overlay" class="overlay"></div>
+
+</div>
+
+<div class="row flex-lg align-items-center g-5 py-5 second">
+        <div class="col-10 col-sm-8 col-lg-6">
+            <img src="{{url_for('static', filename='imgs_&_svgs/derma2.svg')}}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700px" height="500px" loading="lazy">
+        </div>
+
+        <div class="col-lg-6 py-5 px-5">
+            <h1 class="display-6 fw-bold lh-3 mb-3 text-wrap" style="font-family: 'Questrial', sans-serif;"> <b> Catalyzing Quality Clinical Outcomes Through Innovative Healthcare Technology.</b></h1>
+
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <button id="knowMore" type="button" class="btn btn-primary btn-lg px-4 me-md-2">Know More</button>
+            </div>
+        </div>        
+</div>
+
+
+
+
+
+<script src="{{ url_for('static', filename='js/index/index_script.js') }}"></script>
+
+{% endblock content%}

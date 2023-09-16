@@ -1,0 +1,144 @@
+/* CSS for the registration form popup */
+.registration-form-popup {
+    display: none;
+    position: fixed; /* Set to fixed positioning */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -53%);
+    background-color:#FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    width: 90%; /* Adjust the width as desired */
+    max-width: 500px; /* Limit maximum width */
+    max-height: 90%; /* Limit maximum height */
+    overflow-y: auto; /* Enable vertical scrolling if the content overflows */
+    text-align: center; /* Center the content horizontally */
+}
+
+.registration-form-popup h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.registration-form-popup .input-field {
+    margin-bottom: 15px;
+
+}
+
+.registration-form-popup label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left; /* Left-align labels */
+}
+
+input[type="radio"] {
+    margin-top: 10px;
+    width: 18px;
+    height: 18px;
+    accent-color: #046a76;
+}
+
+/* Style for checked radio buttons */
+.modern-radio-label input[type="radio"]:checked + span {
+    color: #57bdc0; 
+}
+
+.modern-radio-label span{
+    font-size: 16px;
+}
+
+/* CSS for the "Close" button */
+.btn-close {
+    background-color: transparent;
+    color: #333; /* Button text color */
+    border: none;
+    font-size: 16px;
+    padding: 10px 3px; /* Increase horizontal padding */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-close:hover {
+    background-color: #046a76; /* Hover background color */
+    color:#FFFFFF;
+}
+
+/* CSS for the "Create account" header */
+.header-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333; /* Header text color */
+    margin: 0;
+    padding: 10px 0;
+}
+
+/* Center the header text vertically */
+.text-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.registration-form-popup #licenseDiv{
+    display: none;
+}
+
+.registration-form-popup input[type="text"],
+.registration-form-popup input[type="email"],
+.registration-form-popup input[type="password"],
+.registration-form-popup input[type="file"],
+.registration-form-popup select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: left; /* Left-align input text */
+}
+
+.registration-form-popup input[type="submit"] {
+    background-color: #5CC9CD;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 30px;
+    margin-top: 15px; /* Adjust the distance from the top */    
+}
+
+.registration-form-popup .submit:hover {
+    background-color: #046a76;
+    transition: background-color 0.3s ease;
+}
+
+.registration-form-popup .signin {
+    text-align: center; /* Center the "Already have an account" text */
+    margin-top: 20px; /* Adjust the distance from the top */
+}
+
+.registration-form-popup .signin a {
+    text-decoration: none;
+    color: #5CC9CD;
+    font-weight: bold;
+}
+
+.registration-form-popup .signin a:hover {
+    text-decoration: underline;
+    color: #046a76;
+}
+
+.input-field.terms{
+    font-size: 14px;
+}
+
+.input-field.terms input{
+    accent-color: #046a76;
+}
+
+

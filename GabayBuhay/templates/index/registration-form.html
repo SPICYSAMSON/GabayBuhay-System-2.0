@@ -1,0 +1,101 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index_style/registration-form_style.css') }}">
+
+<!-- Registration form -->
+<div id="registrationFormPopup" class="registration-form-popup">
+
+    <!-- Your registration form HTML code goes here -->
+    <div class="container main">
+        <form action="{{ url_for('home_bp.index') }}" method="POST" enctype="multipart/form-data">
+            <div class="input-box">
+                <div class="row header-row">
+                    <div class="col-2 text-start">
+                        
+                    </div>
+                    <div class="col-8 text-center">
+                        <h2>Create an Account</h2>
+                    </div>
+                    <div class="col-2 text-end">
+                        <button type="button" class="btn-close" aria-label="Close"></button>
+                    </div>
+                </div>
+                
+               <div class="row">
+                    <label for="acc_type">Account Type</label>
+                </div>
+
+                <div class="row">
+                <!-- Patient Radio Button -->
+                    <div class="col-6 input-field">
+                        <label class="modern-radio-label">
+                            <input type="radio" name="account_type" value="{{ roles[0]['role_id'] }}" id="patientRadio"/>
+                            <span>{{ roles[0]['role_name'] }}</span>
+                        </label>
+                    </div>
+                    <!-- Clinician Radio Button -->
+                    <div class="col-6 input-field">
+                        <label class="modern-radio-label">
+                            <input type="radio" name="account_type" value="{{ roles[1]['role_id'] }}" id="clinicianRadio"/>
+                            <span>{{ roles[1]['role_name']}}</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- First Name -->
+                    <div class="col-6 input-field">
+                        <label for="email">First Name</label>
+                        <input type="text" class="input" name="first_name" required/>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="col-6 input-field">
+                        <label for="email">Last Name</label>
+                        <input type="text" class="input" name="last_name" required/>
+                    </div>
+                </div>
+
+                <!-- Username -->
+                <div class="input-field">
+                    <label for="email">Email</label>
+                    <input type="email" class="input" id="email" name="email" required="" autocomplete="off">
+                </div>
+
+                <!-- Password -->
+                <div class="input-field">
+                    <label for="pass">Password</label>
+                    <input type="password" class="input" id="pass" name="password" required/>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="input-field">
+                    <label for="pass">Confirm Password</label>
+                    <input type="password" class="input" name="repeat_password" required/>
+                </div>
+
+                <!-- Upload License Div (Initially hidden, for CLINICIANS ONLY) -->
+                <div class="input-field" id="licenseDiv">
+                    <label for="license">Upload License</label>
+                    <input type="file" name="clinician_license" placeholder="Upload License"/>
+                </div>
+
+            
+                <div class="input-field terms">
+                    <label>
+                        <input type="checkbox" name="agree_to_terms" required>
+                        I agree to the Terms of Service and Privacy Policy
+                    </label>
+                </div>
+
+                <!-- Sign up button -->
+                <div class="input-field" style="text-align: center;">
+                    <input type="submit" class="submit" value="Sign Up" href="{{ url_for('home_bp.index') }}">
+                </div>
+
+                <!-- Login here -->
+                <div class="signin">
+                    <span>Already have an account? <a id="redirect_to_login">Log in here</a></span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

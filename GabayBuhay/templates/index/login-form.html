@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index_style/login-form_style.css') }}">
+
+<div id="loginFormPopup" class="login-form-popup">
+    <div class="container main">
+
+          <form action="#" id="loginForm" method="POST" enctype="multipart/form-data">
+              <div class="input-box">
+                
+                <div class="row header-row">
+                    <div class="col-2 text-start">
+                          
+                    </div>
+                    <div class="col-8 text-center">
+                        <h2>Log-in</h2>
+                    </div>
+                    <div class="col-2 text-end">
+                        
+                    </div>
+                </div>
+
+                <div class="input-field">
+                  <label for="email">Email</label>
+                  <input type="email" class="input" name = "email" required/> 
+                </div>
+
+                <div class="input-field">
+                  <label for="email">Password</label> 
+                  <input type="password" class="input" name = "password" required/>
+                </div>
+
+                <div class="input-field" style="text-align: center;">
+                  <input type="submit" class="submit" value="Login">
+                </div>
+
+                <!--Sign up here -->
+                <div class="signin">
+                  <span>Don't have an acount? <a id="redirect_to_register">Sign up here</a></span>
+                </div>
+
+              </div>  
+        </form>
+          
+    </div>
+</div>

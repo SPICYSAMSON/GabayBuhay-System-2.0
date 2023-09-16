@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"> 
+    <script defer src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- Add Bootstrap JS and jQuery scripts here -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/index/index_script.js') }}"></script>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='imgs_&_svgs/GaBu_logo1.png')}}" />
+    <title>{% block title %}{% endblock %}</title>
+    <style type="text/css">
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+        .custom-navbar {
+            background-color: #FFFFFF;
+            position: sticky;
+            top: 0;
+            z-index: 3;
+        }
+        .custom-container {
+            max-width: 1400px; /* Adjust this value to make the container bigger */
+        }
+        .nav-link{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .nav-link:hover {
+            color: #5CC9CD;
+        }
+        #log-in {
+            background-color: #5CC9CD;
+            color:#FFFFFF;
+            border: none;
+            border-radius: 30px; /* Adjust the value to control button roundness */
+            padding: 10px 20px;
+
+        }
+        body{
+          min-height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+
+        #log-in:hover{
+            background-color: #046a76;
+        }
+
+        footer {
+          margin-top: auto;
+          padding-left: 8%;
+          padding-right: 8%;
+          background-color: #5CC9CD;
+        }
+
+        footer .col-first{
+          padding-top: 10px;
+          
+        }
+        footer .col{
+          text-align: center;
+        }
+
+        footer.nav-link {
+          font-size: 18px;
+        }
+        footer .nav-link:hover{
+            color:#FFFFFF;
+        }
+
+
+    </style>
+  </head>
+  {% endblock head %}
+
+  <body>
+    <!--NAVBAR-->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="{{url_for('index')}}">
+                <img src="{{url_for('static', filename='imgs_&_svgs/GaBu_logo1.png')}}" alt="GabayBuhay Icon" width="32px" height="32px">
+                GabayBuhay
+            </a>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">LichenCheck</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">See a Doctor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="clinicalSolutionsBtn">Clinical Solutions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">DermAware</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutUsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            About Us
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="aboutUsDropdown">
+                            <a class="dropdown-item" href="#">Our Team</a>
+                            <a class="dropdown-item" href="#">Feedback</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="nav-button">
+                    <button id="log-in" type="button" class="btn btn-primary">Log-in</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--CONTENT BODY (replace with the specific contents for the corresponding page-->
+      <div class="wrapper">
+        <div class="container custom-container">
+            {% block content %}{% endblock %}
+        </div>
+      </div>
+
+
+    {# NEW FOOTER #}
+    <footer class="border-top border-bottom pt-3 pb-3">
+      <!-- First Row -->
+      <div class="row row-cols-6">
+        <div class="col-first">
+          <a href="{{url_for('index')}}" class="link-dark">          
+            <img src="{{url_for('static', filename='imgs_&_svgs/GaBu_logo2.png')}}" alt="GabayBuhay Icon" width="42px" height="42px" >                                                                          
+          </a>
+          <h6>GabayBuhay</h6>
+          <h6 class="text-muted">Legazpi City, Albay</h6>
+          <h6 class="text-muted">© 2023</h6>
+        </div>
+
+        <div class="col nav-link px-3 link-dark">
+          <a href="#" class="nav-link px-3 link-dark">LichenCheck</a>
+        </div>
+        <div class="col nav-link px-3 link-dark">
+          <a href="#" class="nav-link px-3 link-dark">See a Doctor</a>
+        </div>
+        <div class="col nav-link px-3 link-dark">
+          <a href="#" class="nav-link px-3 link-dark">DermAware</a>
+        </div>
+        <div class="col nav-link px-3 link-dark">
+          <a href="#" class="nav-link px-3 link-dark">Clinical Solutions</a>
+        </div>
+        <div class="col nav-link px-3 link-dark">
+          <a href="#" class="nav-link px-3 link-dark">About Us</a>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2 px-3"><a href="#" class="nav-link p-0 text-muted">Our Team</a></li>
+            <li class="nav-item mb-2 px-3"><a href="#" class="nav-link p-0 text-muted">Feedback</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Separator Line -->
+      <hr class="my-2">
+
+      <!-- Second Row for Terms and Conditions -->
+      <div class="row">
+        <div class="col nav-link px-2 link-dark text-center">
+          <h6><a href="#" class="nav-link px-3 link-dark">Terms and Conditions | Privacy Policy</a></h6>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+  </body>
+</html>
