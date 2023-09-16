@@ -1,5 +1,5 @@
 import os
-from flask import (Blueprint, current_app, render_template, request, redirect, url_for, session, flash, make_response)
+from flask import (Blueprint, current_app, render_template, request, redirect, url_for, session, jsonify, flash, make_response)
 from werkzeug.utils import secure_filename
 import db
 
@@ -49,37 +49,33 @@ def registration():
                     return redirect(url_for('clinician_bp.clinician_home'))
                 
 
-@home_bp.route('/log_in', methods = ['POST'])
+@home_bp.route('/log_in', methods=['POST'])
 def log_in():
     if request.method == 'POST':
         with current_app.app_context():
-            bcrypt = current_app.config['BCRYPT'] 
+            bcrypt = current_app.config['BCRYPT']
             email = request.form['email']
             password = request.form['password']
 
-            # Implement authentication logic here, for example:
-            # Check if the provided username and password are valid
-            # You can use Flask-Bcrypt to verify the password hash
             user_data = db.fetch_user(email)
-            
-            if user_data is None: 
-                # Invalid credentials
-                print('You have not yet created an account. Please try again.', 'danger')  # Flash the error message
-                return render_template('index/login-form.html')  # Render the login form with the error message
 
-            elif user_data is not None and bcrypt.check_password_hash(user_data['password'], password):
-                # Successful login
-                session['user_data'] = user_data
-                            
-                if user_data['role_id'] == 1:
-                    return redirect(url_for('patient_bp.patient_home'))
-                elif user_data['role_id'] == 2:
-                    return redirect(url_for('clinician_bp.clinician_home'))
-                
+            if user_data is None:
+                # Invalid credentials
+                error_message = 'You have not yet created an account. Please try again.'
+                return jsonify({'error': error_message})
+
             elif not bcrypt.check_password_hash(user_data['password'], password):
                 # Invalid credentials
-                print('Invalid credentials. Please try entering a password again.', 'danger')  # Flash the error message
-                return render_template('index/login-form.html')  # Render the login form with the error message
+                error_message = 'Invalid credentials. Please try entering the password again.'
+                return jsonify({'error': error_message})
+
+            # Successful login
+            session['user_data'] = user_data
+
+            if user_data['role_id'] == 1:
+                return jsonify({'success': 'Patient login successful', 'redirect_url': url_for('patient_bp.patient_home')})
+            elif user_data['role_id'] == 2:
+                return jsonify({'success': 'Clinician login successful', 'redirect_url': url_for('clinician_bp.clinician_home')})
       
       
 @home_bp.route('/logout', methods=['GET', 'POST'])

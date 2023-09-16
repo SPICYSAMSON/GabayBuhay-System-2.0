@@ -16,6 +16,19 @@
     overflow-y: auto; /* Enable vertical scrolling if the content overflows */
 }
 
+.error-message {
+    background-color: #f8d7da; /* Light red background color */
+    color: #721c24; /* Dark red text color */
+    padding: 10px;
+    margin-top: 2.5px;
+    margin-bottom: 10px;
+    border: 1px solid #f5c6cb; /* Light red border color */
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold; /* Make the text bold */
+}
+
+
 .header-row {
  /* Background color for the header row */
     border-radius: 10px 10px 0 0; /* Rounded corners for the top */
