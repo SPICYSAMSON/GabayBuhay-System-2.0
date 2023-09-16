@@ -12,8 +12,14 @@
     z-index: 2;
     width: 90%; /* Adjust the width as desired */
     max-width: 480px; /* Limit maximum width */
-    max-height: 55%; /* Limit maximum height */
+    max-height: 65%; /* Limit maximum height */
     overflow-y: auto; /* Enable vertical scrolling if the content overflows */
+}
+
+#error-message-container {
+    max-height: 100px; /* Adjust the height as needed */
+    color: white; /* Set the text color for error messages */
+    padding: 10px; /* Add padding to the error container for better readability */
 }
 
 .error-message {

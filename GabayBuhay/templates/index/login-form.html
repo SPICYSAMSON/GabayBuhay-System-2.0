@@ -3,7 +3,10 @@
 <div id="loginFormPopup" class="login-form-popup">
     <div class="container main">
     
-    <div id="error-message" class="error-message"  style="display: none;"></div>
+    <div id="error-message-container">
+        <div id="error-message" class="error-message"  style="display: none;"></div>
+    </div>
+
 
           <form action="{{ url_for('home_bp.log_in') }}" id="loginForm" method="POST" enctype="multipart/form-data">
               <div class="input-box">
