@@ -15,6 +15,8 @@ app.secret_key = 'DERMA4LYF'
 bcrypt = Bcrypt(app)
 app.config['BCRYPT'] = bcrypt
 
+
+#BLUEPRINTS
 from views.index import home_bp
 app.register_blueprint(home_bp, bcrypt = bcrypt)
 

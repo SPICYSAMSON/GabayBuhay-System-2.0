@@ -1,12 +1,17 @@
 {% extends "base.html" %}
 
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/users/patient/clinician_style.css') }}">
+{% endblock head %}
+{% block title %}Clinician{% endblock title %}
 {% block nav_button %}
     <div>
-        <p class="nav-link link-dark">Welcome, {{ clinician_data['first_name'][0] }}</p>
+        <p class="nav-link link-dark">Welcome, {{ clinician_data['first_name'] }}</p>
     </div>
 
     <div class="col-md-2 text-end position-relative">
-        <a href="#" class="btn text-dark">Log-out</a>
+        <a href="{{ url_for('home_bp.logout') }}" class="btn text-light" id="log-in">Log-out</a>
     </div>
 {% endblock nav_button %}
 

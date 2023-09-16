@@ -24,7 +24,7 @@ def load_roles_from_db():
         # Handle any exceptions that may occur during the databaseq interaction
         print("An error occurred:", e)
         
-
+        
 def register_user(user_data):
     ''' Registers the user into the gabaybuhay.users table,
     gets their user_id and role chosen;
@@ -109,6 +109,7 @@ def insert_to_patient(patient_data, user_id, conn):
             )
     conn.commit()
 
+
 def insert_to_clinician(clinician_data, user_id, conn):
     query = text(
         "INSERT INTO clinician (user_id, license)"
@@ -124,6 +125,50 @@ def insert_to_clinician(clinician_data, user_id, conn):
             )
     conn.commit()
 
+
+def fetch_user(email):
+    '''LOGIN - Gets the user's email and password from db for verification.'''
+    try:
+        # Connect to the database
+        with engine.connect() as conn:
+            # Execute a SQL query to select the user with the given email
+            query = text("SELECT user_id, email, password, first_name, last_name FROM users WHERE email = :email")
+            result = conn.execute(query, 
+                                  {'email': email}
+                                  )
+            
+            # Fetch the query result as a single row, returns a TUPLE
+            
+            user_data = result.fetchone()
+            print(user_data)
+            
+            if user_data is not None:
+                # Convert the user tuple to a dictionary
+                user_data_dict = {
+                    'user_id': user_data.user_id,
+                    'email': user_data.email,
+                    'password': user_data.password,
+                    'first_name' : user_data.first_name,
+                    'last_name' : user_data.last_name
+                }
+            
+                query_two = text("SELECT role_id FROM user_roles WHERE user_id = :user_id")
+                result_two = conn.execute(query_two, 
+                                    {'user_id': user_data_dict['user_id']}
+                                        )
+                
+                role_id = result_two.fetchone()
+
+                # Extract the value from the tuple and add it to the dictionary
+                user_data_dict['role_id'] = role_id[0]
+                print(user_data_dict)
+                return user_data_dict
+            else:
+                return None
+            
+    except Exception as e:
+        # Handle any exceptions that may occur during the database interaction
+        print("An error occurred:", e)
 
             
             
