@@ -12,12 +12,17 @@
     z-index: 2;
     width: 90%; /* Adjust the width as desired */
     max-width: 480px; /* Limit maximum width */
-    max-height: 65%; /* Limit maximum height */
-    overflow-y: auto; /* Enable vertical scrolling if the content overflows */
+    max-height: 68%; /* Limit maximum height */
 }
 
 #error-message-container {
-    max-height: 100px; /* Adjust the height as needed */
+    max-height: 80px; /* Adjust the height as needed */
+    color: white; /* Set the text color for error messages */
+    padding: 10px; /* Add padding to the error container for better readability */
+}
+
+#success-message-container {
+    max-height: 70px; /* Adjust the height as needed */
     color: white; /* Set the text color for error messages */
     padding: 10px; /* Add padding to the error container for better readability */
 }
@@ -29,6 +34,18 @@
     margin-top: 2.5px;
     margin-bottom: 10px;
     border: 1px solid #f5c6cb; /* Light red border color */
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold; /* Make the text bold */
+}
+
+.success-message {
+    background-color: #e1f3df; /* Light red background color */
+    color: #178036; /* Dark red text color */
+    padding: 10px;
+    margin-top: 2.5px;
+    margin-bottom: 10px;
+    border: 1px solid #e4f8e2; /* Light red border color */
     border-radius: 4px;
     text-align: center;
     font-weight: bold; /* Make the text bold */

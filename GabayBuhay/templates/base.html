@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    
     
     <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='imgs_&_svgs/GaBu_logo1.png')}}" />
     <title>{% block title %}{% endblock %}</title>
@@ -168,7 +168,9 @@
     </footer>
 
 
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ url_for('static', filename='js/index/index_script.js') }}"></script>
+  {% block script %} {% endblock script %}
 
   </body>
 </html>
