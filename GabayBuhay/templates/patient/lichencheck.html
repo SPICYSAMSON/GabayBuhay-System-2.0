@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/users/patient/patient_clinical_solutions.css') }}">
+{% endblock head %}
+{% block title %}Patient - LichenCheck{% endblock title %}
+{% block nav_button %}
+    <div>
+        <p class="nav-link link-dark">Welcome {{ patient_data['first_name']}}</p>
+    </div>
+
+    <div class="col-md-2 text-end position-relative">
+        <a href="{{ url_for('home_bp.logout') }}" class="btn text-light" id="log-in">Log-out</a>
+    </div>
+{% endblock nav_button %}
+
+{% block content %}
+<h1>LichenCheck Page</h1>
+{% endblock content %}

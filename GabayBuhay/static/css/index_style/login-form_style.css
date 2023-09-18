@@ -13,6 +13,7 @@
     width: 90%; /* Adjust the width as desired */
     max-width: 480px; /* Limit maximum width */
     max-height: 68%; /* Limit maximum height */
+    overflow-y: auto; /* Enable vertical scrolling if the content overflows */
 }
 
 #error-message-container {

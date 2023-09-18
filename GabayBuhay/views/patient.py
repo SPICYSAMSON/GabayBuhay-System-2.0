@@ -14,3 +14,10 @@ def patient_home():
     response = make_response(render_template('patient/patient.html', patient_data = user_data))
     response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
     return response
+
+
+@patient_bp.route('/patient/lichencheck')
+def lichencheck():
+    # Your code to render the user's profile page
+    user_data = session.get('user_data', None)
+    return render_template('patient/lichencheck.html', patient_data = user_data)
