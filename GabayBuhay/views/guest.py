@@ -3,15 +3,15 @@ from flask import (Blueprint, current_app, render_template, request, redirect, u
 from werkzeug.utils import secure_filename
 import db
 
-home_bp = Blueprint('home_bp', __name__)
+guest_bp = Blueprint('guest_bp', __name__)
+roles = db.load_roles_from_db()
 
-@home_bp.route('/')
+@guest_bp.route('/')
 def index(): 
-    roles = db.load_roles_from_db()
-    return render_template('index/index.html', roles=roles)
+    return render_template('guest/index.html', roles=roles)
 
 
-@home_bp.route('/registration', methods=['POST'])
+@guest_bp.route('/registration', methods=['POST'])
 def registration():
     if request.method == 'POST':
         with current_app.app_context():
@@ -49,7 +49,7 @@ def registration():
                 return redirect(url_for('clinician_bp.clinician_home'))
             
 
-@home_bp.route('/log_in', methods=['POST'])
+@guest_bp.route('/log_in', methods=['POST'])
 def log_in():
     if request.method == 'POST':
         with current_app.app_context():
@@ -78,9 +78,14 @@ def log_in():
                 return jsonify({'success': 'Clinician login successful', 'redirect_url': url_for('clinician_bp.clinician_home')})
       
       
-@home_bp.route('/logout', methods=['GET', 'POST'])
+@guest_bp.route('/logout', methods=['GET', 'POST'])
 def logout():
     # Remove session variables related to the user's login
     session.pop('user_data', None)  # Remove user ID or any other relevant session variables
     # Redirect the user to the login page or any other appropriate page
-    return redirect(url_for('home_bp.index')) 
+    return redirect(url_for('guest_bp.index')) 
+
+
+@guest_bp.route('/clinical_solutions')
+def clinical_solutions():
+    return render_template('guest/clinical_solutions.html', roles= roles)

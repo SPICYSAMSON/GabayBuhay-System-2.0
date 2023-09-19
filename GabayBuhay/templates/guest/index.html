@@ -2,17 +2,13 @@
 {% extends "base.html" %}
 
 {% block head %}
-    {# super() the index.html inherits the contents of basehtml head block #}
+    {# super() - the index.html inherits the contents of basehtml head block #}
     {{ super() }}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/index_style/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/guest/style.css') }}">
 
 {% endblock head %}
 
 {% block title %}GabayBuhay{% endblock title %}
-
-{% block navbar %}
-    {{ super() }}
-{% endblock navbar %}
 
 {% block content %}
 
@@ -31,11 +27,11 @@
 
         {# REGISTRATION FORM #}
         {# When user clicks get started, this will pop up#}
-        {% include "index/registration-form.html" %}
+        {% include "guest/registration-form.html" %}
 
         {# LOGIN FORM #}
         {# When user clicks get started, this will pop up#}
-        {% include "index/login-form.html" %}
+        {% include "guest/login-form.html" %}
         <div id="overlay" class="overlay"></div>
 
 </div>
@@ -57,8 +53,10 @@
 
 {% endblock content%}
 
-{% block script %}
-    <script src="{{ url_for('static', filename='js/index/index_script.js') }}"></script>
-{% endblock script %}
+
+{% block scripts %}
+    {{ super() }}
+{% endblock scripts %}
+
 
 

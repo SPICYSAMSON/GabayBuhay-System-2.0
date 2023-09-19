@@ -8,7 +8,7 @@ def clinician_home():
     # Your code to render the user's profile page
     user_data = session.get('user_data', None)
     if not user_data:
-        return redirect(url_for('home_bp.index'))  # Redirect to the index if not logged in
+        return redirect(url_for('guest_bp.index'))  # Redirect to the index if not logged in
     
     # Create the response and set Cache-Control to prevent caching
     response = make_response(render_template('clinician/clinician.html', clinician_data = user_data))

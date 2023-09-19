@@ -1,11 +1,11 @@
-<link rel="stylesheet" href="{{ url_for('static', filename='css/index_style/registration-form_style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/guest/registration-form_style.css') }}">
 
 <!-- Registration form -->
 <div id="registrationFormPopup" class="registration-form-popup">
 
     <!-- Your registration form HTML code goes here -->
     <div class="container main">
-        <form action="{{ url_for('home_bp.registration') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ url_for('guest_bp.registration') }}" method="POST" enctype="multipart/form-data">
             <div class="input-box">
                 <div class="row header-row">
                     <div class="col-2 text-start">
@@ -43,18 +43,18 @@
                 <div class="row">
                     <!-- First Name -->
                     <div class="col-6 input-field">
-                        <label for="email">First Name</label>
+                        <label for="fname">First Name</label>
                         <input type="text" class="input" name="first_name" required/>
                     </div>
 
                     <!-- Last Name -->
                     <div class="col-6 input-field">
-                        <label for="email">Last Name</label>
+                        <label for="lname">Last Name</label>
                         <input type="text" class="input" name="last_name" required/>
                     </div>
                 </div>
 
-                <!-- Username -->
+                <!-- Email -->
                 <div class="input-field">
                     <label for="email">Email</label>
                     <input type="email" class="input" id="email" name="email" required="" autocomplete="off">
@@ -88,7 +88,7 @@
 
                 <!-- Sign up button -->
                 <div class="input-field" style="text-align: center;">
-                    <input type="submit" class="submit" value="Sign Up" href="{{ url_for('home_bp.registration') }}">
+                    <input type="submit" class="submit" value="Sign Up" href="{{ url_for('guest_bp.registration') }}">
                 </div>
 
                 <!-- Login here -->

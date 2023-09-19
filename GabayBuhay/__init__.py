@@ -17,8 +17,8 @@ app.config['BCRYPT'] = bcrypt
 
 
 #BLUEPRINTS
-from views.index import home_bp
-app.register_blueprint(home_bp, bcrypt = bcrypt)
+from views.guest import guest_bp
+app.register_blueprint(guest_bp, bcrypt = bcrypt)
 
 from views.patient import patient_bp  
 app.register_blueprint(patient_bp)

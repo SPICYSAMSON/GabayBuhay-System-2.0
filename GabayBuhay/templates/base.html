@@ -80,48 +80,15 @@
   <body>
     <!--NAVBAR (changes depending what the role of the user is.) -->
     {% block navbar %}
-    
-      {% if nonUser %}
+
+      {% if patientLoggedIn %}
         <header class="py-3 border-bottom custom-navbar">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center">
-                    <a href="{{url_for('home_bp.index')}}" class="d-flex align-items-center col-md-3 text-dark text-decoration-none" style="font-family: 'Questrial', sans-serif; font-size:larger;">
+                    <a href="{{url_for('guest_bp.index')}}" class="d-flex align-items-center col-md-3 text-dark text-decoration-none" style="font-family: 'Questrial', sans-serif; font-size:larger;">
                     
                         <img src="{{url_for('static', filename='imgs_&_svgs/GaBu_logo1.png')}}" alt="GabayBuhay Icon" width="32px" height="32px" >
                         GabayBuhay                                                                                    
-                    </a>
-                    
-
-                    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                        <li class="nav-item"><a href="#" class="nav-link px-3 link-dark" id="lichenCheckBtn">LichenCheck</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-3 link-dark" id="seeADoctorBtn">See a Doctor</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-3 link-dark" id="clinicalSolutionsBtn">Clinical Solutions</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-3 link-dark" id="dermAwareBtn">DermAware</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link px-3 link-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="aboutUsBtn">
-                                About Us
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Our Team</a>
-                                <a class="dropdown-item" href="#">Feedback</a>
-                            </div>
-                        </li>
-                    </ul>
-
-                      <div class="col-md-3 mr-5 text-end position-relative">
-                          <button id="log-in" type="button" class="btn text-light">Log-in</button>
-                      </div>
-                </div>
-            </div>
-        </header>
-      {% elif patientLoggedIn %}
-        <header class="py-3 border-bottom custom-navbar">
-            <div class="container">
-                <div class="d-flex justify-content-between align-items-center">
-                    <a href="{{url_for('home_bp.index')}}" class="d-flex align-items-center col-md-3 text-dark text-decoration-none" style="font-family: 'Questrial', sans-serif; font-size:larger;">
-                    
-                        <img src="{{url_for('static', filename='imgs_&_svgs/GaBu_logo1.png')}}" alt="GabayBuhay Icon" width="32px" height="32px" >
-                        GabayBuhay                                                                                     
                     </a>
                     
 
@@ -152,7 +119,7 @@
         <header class="py-3 border-bottom custom-navbar">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center">
-                    <a href="{{url_for('home_bp.index')}}" class="d-flex align-items-center col-md-3 text-dark text-decoration-none" style="font-family: 'Questrial', sans-serif; font-size:larger;">
+                    <a href="{{url_for('guest_bp.index')}}" class="d-flex align-items-center col-md-3 text-dark text-decoration-none" style="font-family: 'Questrial', sans-serif; font-size:larger;">
                     
                         <img src="{{url_for('static', filename='imgs_&_svgs/GaBu_logo1.png')}}" alt="GabayBuhay Icon" width="32px" height="32px" >
                         GabayBuhay                                                                                     
@@ -161,7 +128,6 @@
 
                     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                         <li class="nav-item"><a href="#" class="nav-link px-3 link-dark" id="lichenCheckBtn">LichenCheck</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-3 link-dark" id="seeADoctorBtn">See a Doctor</a></li>
                         <li class="nav-item"><a href="#" class="nav-link px-3 link-dark" id="clinicalSolutionsBtn">Clinical Solutions</a></li>
                         <li class="nav-item"><a href="#" class="nav-link px-3 link-dark" id="dermAwareBtn">DermAware</a></li>
                         <li class="nav-item dropdown">
@@ -182,11 +148,47 @@
                 </div>
             </div>
         </header>
+      {% elif nonUser %}
+        <header class="py-3 border-bottom custom-navbar">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <a href="{{url_for('guest_bp.index')}}" class="d-flex align-items-center col-md-3 text-dark text-decoration-none" style="font-family: 'Questrial', sans-serif; font-size:larger;">
+                    
+                        <img src="{{url_for('static', filename='imgs_&_svgs/GaBu_logo1.png')}}" alt="GabayBuhay Icon" width="32px" height="32px" >
+                        GabayBuhay                                                                                    
+                    </a>
+                    
+
+                    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                        <li class="nav-item"><a href="#" class="nav-link px-3 link-dark" id="lichenCheckBtn">LichenCheck</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link px-3 link-dark" id="seeADoctorBtn">See a Doctor</a></li>
+                        <li class="nav-item"><a href="{{url_for('guest_bp.clinical_solutions')}}" class="nav-link px-3 link-dark" id="clinicalSolutionsBtn">Clinical Solutions</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link px-3 link-dark" id="dermAwareBtn">DermAware</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-3 link-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="aboutUsBtn">
+                                About Us
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Our Team</a>
+                                <a class="dropdown-item" href="#">Feedback</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                      <div class="col-md-3 mr-5 text-end position-relative">
+                          <button id="log-in" type="button" class="btn text-light">Log-in</button>
+                      </div>
+                </div>
+            </div>
+        </header>
       {% endif %}
 
     {% endblock navbar %}
 
     <!--CONTENT BODY (replace with the specific contents for the corresponding page-->
+
+
+    
       <div class="wrapper">
         <div class="container custom-container">
             {% block content %}{% endblock %}
@@ -199,7 +201,7 @@
       <!-- First Row -->
       <div class="row row-cols-6">
         <div class="col-first">
-          <a href="{{url_for('home_bp.index')}}" class="link-dark">          
+          <a href="{{url_for('guest_bp.index')}}" class="link-dark">          
             <img src="{{url_for('static', filename='imgs_&_svgs/GaBu_logo2.png')}}" alt="GabayBuhay Icon" width="42px" height="42px" >                                                                          
           </a>
           <h6>GabayBuhay</h6>
@@ -239,10 +241,14 @@
       </div>
     </footer>
 
-
+  
+  
+  
+  
+  {% block scripts %} 
   <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/index/index_script.js') }}"></script>
-  {% block script %} {% endblock script %}
+  <script src="{{ url_for('static', filename='js/guest/index_script.js') }}"></script>
+  {% endblock scripts %}
 
   </body>
 </html>

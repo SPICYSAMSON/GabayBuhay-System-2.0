@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     const log_in_nav = document.getElementById('log-in');
-    const getStartedBtn = document.getElementById('getStartedBtn');
-        const lichenCheckBtn = document.getElementById('lichenCheckBtn');
-        const seeADoctorBtn = document.getElementById('seeADoctorBtn');
-        const dermAwareBtn = document.getElementById('dermAwareBtn');
+    const lichenCheckBtn = document.getElementById('lichenCheckBtn');
+    const seeADoctorBtn = document.getElementById('seeADoctorBtn');
+    const dermAwareBtn = document.getElementById('dermAwareBtn');
     const overlay = document.getElementById('overlay');
     const registrationFormPopup = document.getElementById('registrationFormPopup');
     const loginFormPopup = document.getElementById('loginFormPopup');
@@ -17,10 +16,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const confirmPasswordField = document.querySelector('[name="repeat_password"]');
     const submitButton = document.querySelector('.submit');
     const closeButton = document.querySelector(".btn-close");
-
-
-
-    if (getStartedBtn && loginFormPopup && registrationFormPopup) {
+    const getStartedBtn1 = document.getElementById('getStartedBtn1');
+    const getStartedBtn2 = document.getElementById('getStartedBtn2');
+    const getStartedBtn3 = document.getElementById('getStartedBtn3');
+    const getStartedBtn4 = document.getElementById('getStartedBtn4');
+    const getStartedBtn5 = document.getElementById('getStartedBtn5');
+    
+    if (loginFormPopup && registrationFormPopup) {
 
         // Even listener for "Log-in" button in the navbar in base.html
         log_in_nav.addEventListener('click', function () {
@@ -29,27 +31,24 @@ document.addEventListener('DOMContentLoaded', function () {
             registrationFormPopup.style.display = 'none';
         });
 
-        // Even listener for "Get Started Button"
-        getStartedBtn.addEventListener('click', function () {
-            overlay.style.display = 'block';   
-            registrationFormPopup.style.display = 'block';
-        });
-
         // Even listener for "LichenCheck" NAV-link
         lichenCheckBtn.addEventListener('click', function () {
             overlay.style.display = 'block';   
+            loginFormPopup.style.display = 'none';
             registrationFormPopup.style.display = 'block';
         });
 
         // Even listener for "See a Doctor" NAV-link
         seeADoctorBtn.addEventListener('click', function () {
             overlay.style.display = 'block';   
+            loginFormPopup.style.display = 'none';
             registrationFormPopup.style.display = 'block';
         });
 
         // Even listener for "DermAware" NAV-link
         dermAwareBtn.addEventListener('click', function () {
             overlay.style.display = 'block';   
+            loginFormPopup.style.display = 'none';
             registrationFormPopup.style.display = 'block';
         });
 

@@ -3,9 +3,11 @@
 
 {% block head %}
     {{ super() }}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/users/patient/patient_clinical_solutions.css') }}">
 {% endblock head %}
-{% block title %}Patient - LichenCheck{% endblock title %}
+
+{% block title %}Patient - Home{% endblock title %}
+
+
 {% block nav_button_patient %}
     <div>
         <p class="nav-link link-dark">Welcome {{ patient_data['first_name']}}</p>
@@ -17,5 +19,7 @@
 {% endblock nav_button_patient %}
 
 {% block content %}
-<h1>LichenCheck Page</h1>
+
+   <h1>Patient Home</h1>
+
 {% endblock content %}
