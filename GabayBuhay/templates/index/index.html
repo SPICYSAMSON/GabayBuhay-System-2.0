@@ -1,3 +1,4 @@
+{% set nonUser = True %}
 {% extends "base.html" %}
 
 {% block head %}
@@ -31,6 +32,9 @@
         {# REGISTRATION FORM #}
         {# When user clicks get started, this will pop up#}
         {% include "index/registration-form.html" %}
+
+        {# LOGIN FORM #}
+        {# When user clicks get started, this will pop up#}
         {% include "index/login-form.html" %}
         <div id="overlay" class="overlay"></div>
 

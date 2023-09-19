@@ -1,3 +1,4 @@
+{% set patientLoggedIn = True %}
 {% extends "base.html" %}
 
 {% block head %}
@@ -8,7 +9,7 @@
 {% block title %}Patient - Clinical Solutions{% endblock title %}
 
 
-{% block nav_button %}
+{% block nav_button_patient %}
     <div>
         <p class="nav-link link-dark">Welcome {{ patient_data['first_name']}}</p>
     </div>
@@ -16,7 +17,7 @@
     <div class="col-md-2 text-end position-relative">
         <a href="{{ url_for('home_bp.logout') }}" class="btn text-light" id="log-in">Log-out</a>
     </div>
-{% endblock nav_button %}
+{% endblock nav_button_patient %}
 
 {% block content %}
 

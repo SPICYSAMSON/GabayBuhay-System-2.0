@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const getStartedBtn = document.getElementById('getStartedBtn');
         const lichenCheckBtn = document.getElementById('lichenCheckBtn');
         const seeADoctorBtn = document.getElementById('seeADoctorBtn');
+        const dermAwareBtn = document.getElementById('dermAwareBtn');
     const overlay = document.getElementById('overlay');
     const registrationFormPopup = document.getElementById('registrationFormPopup');
     const loginFormPopup = document.getElementById('loginFormPopup');
@@ -34,14 +35,20 @@ document.addEventListener('DOMContentLoaded', function () {
             registrationFormPopup.style.display = 'block';
         });
 
-        // Even listener for "LichenCheck" NAV
+        // Even listener for "LichenCheck" NAV-link
         lichenCheckBtn.addEventListener('click', function () {
             overlay.style.display = 'block';   
             registrationFormPopup.style.display = 'block';
         });
 
-        // Even listener for "See a Doctor" NAV
+        // Even listener for "See a Doctor" NAV-link
         seeADoctorBtn.addEventListener('click', function () {
+            overlay.style.display = 'block';   
+            registrationFormPopup.style.display = 'block';
+        });
+
+        // Even listener for "DermAware" NAV-link
+        dermAwareBtn.addEventListener('click', function () {
             overlay.style.display = 'block';   
             registrationFormPopup.style.display = 'block';
         });
