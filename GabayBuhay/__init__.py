@@ -23,9 +23,6 @@ app.register_blueprint(guest_bp, bcrypt = bcrypt)
 from views.patient import patient_bp  
 app.register_blueprint(patient_bp)
 
-from views.clinician import clinician_bp
-app.register_blueprint(clinician_bp)
-
 
 if __name__ == '__main__':
     app.run(debug=True)

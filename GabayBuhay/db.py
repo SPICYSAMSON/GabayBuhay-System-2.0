@@ -6,23 +6,6 @@ import os
 DB_CONNECTION_STRING = "mysql+pymysql://root:HAKDUGERZ69@127.0.0.1:3306/gabaybuhay?charset=utf8mb4"
 
 engine = create_engine(DB_CONNECTION_STRING)
-
-
-def load_roles_from_db():
-    '''Gets the role_id and role_name from the gabaybuhay.roles table.'''
-    try:
-        # Connect to the database
-        with engine.connect() as conn:
-            # Execute a SQL query to select all records from the "roles" table
-            result = conn.execute(text("SELECT * FROM roles"))
-            # Fetch and convert the query results to a list of dictionaries
-            roles = [row._asdict() for row in result]
-            
-            return roles
-            
-    except Exception as e:
-        # Handle any exceptions that may occur during the databaseq interaction
-        print("An error occurred:", e)
         
         
 def register_user(user_data):
@@ -87,8 +70,7 @@ def register_user(user_data):
             role_id_int = int(role_id)
             if role_id_int == 1:
                 insert_to_patient(user_data, user_id, conn)
-            elif role_id_int == 2:
-                insert_to_clinician(user_data, user_id, conn)
+
 
     except Exception as e:
         # Log any exceptions that occur
@@ -105,22 +87,6 @@ def insert_to_patient(patient_data, user_id, conn):
             query,
                 {
                     'user_id': user_id
-                }
-            )
-    conn.commit()
-
-
-def insert_to_clinician(clinician_data, user_id, conn):
-    query = text(
-        "INSERT INTO clinician (user_id, license)"
-        "VALUES (:user_id, :license)"
-    )
-    
-    conn.execute(
-            query,
-                {
-                    'user_id': user_id,
-                    'license': clinician_data['clinician_license']
                 }
             )
     conn.commit()

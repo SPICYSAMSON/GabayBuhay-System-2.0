@@ -1,5 +1,23 @@
 /* CSS for the panel */
 
+.container-body{
+  width: 100%;
+  height: 100vh;
+  /* overflow-y: scroll;
+  scroll-snap-type: y mandatory; */
+}
+
+
+.slides{
+  width: 98%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  /* scroll-snap-align: start; */
+}
+
 
 .row.first #getStartedBtn{
   border-radius: 50px; /* Adjust the value to control button roundness */

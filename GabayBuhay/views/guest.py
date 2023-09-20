@@ -4,11 +4,10 @@ from werkzeug.utils import secure_filename
 import db
 
 guest_bp = Blueprint('guest_bp', __name__)
-roles = db.load_roles_from_db()
 
 @guest_bp.route('/')
 def index(): 
-    return render_template('guest/index.html', roles=roles)
+    return render_template('guest/index.html')
 
 
 @guest_bp.route('/registration', methods=['POST'])
@@ -27,14 +26,6 @@ def registration():
             user_data['password'][0] = hashed_password
             user_data['repeat_password'][0] = hashed_repeat_password
             
-            # Handle file upload
-            if 'clinician_license' in request.files:
-                file = request.files['clinician_license']
-                if file.filename != '':
-                    filename = secure_filename(file.filename)
-                    file.save(os.path.join(current_app.config['UPLOAD_FOLDER'], filename))
-                    user_data['clinician_license'] = filename  # Save the filename to the database
-                    
             db.register_user(user_data)
             #Turn the user_data into a regular dictionary!! 
             user_data = {key: value[0] for key, value in user_data.items()}
@@ -43,10 +34,7 @@ def registration():
             session['user_data'] = user_data
             
             #Redirects the user to his/her respective page based on their role (patient/clinician)
-            if user_data['account_type'] == '1':
-                return redirect(url_for('patient_bp.patient_home'))
-            elif user_data['account_type'] == '2':
-                return redirect(url_for('clinician_bp.clinician_home'))
+            return redirect(url_for('patient_bp.patient_home'))
             
 
 @guest_bp.route('/log_in', methods=['POST'])
@@ -74,8 +62,6 @@ def log_in():
 
             if user_data['role_id'] == 1:
                 return jsonify({'success': 'Patient login successful', 'redirect_url': url_for('patient_bp.patient_home')})
-            elif user_data['role_id'] == 2:
-                return jsonify({'success': 'Clinician login successful', 'redirect_url': url_for('clinician_bp.clinician_home')})
       
       
 @guest_bp.route('/logout', methods=['GET', 'POST'])
@@ -88,4 +74,4 @@ def logout():
 
 @guest_bp.route('/clinical_solutions')
 def clinical_solutions():
-    return render_template('guest/clinical_solutions.html', roles= roles)
+    return render_template('guest/clinical_solutions.html')

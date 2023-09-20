@@ -12,44 +12,54 @@
 
 {% block content %}
 
-<div class="row flex-lg-row-reverse align-items-center g-5 py-5 first">
-        <div class="col-10 col-sm-8 col-lg-6">
-            <img src="{{url_for('static', filename='imgs_&_svgs/derma.svg')}}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
-        </div>
-
-        <div class="col-lg-6 py-5 px-5">
-            <h1 class="display-6 fw-bold lh-3 mb-3 text-wrap" style="font-family: 'Questrial', sans-serif;"> <b> Unlocking dermatological wisdom through information, guiding everyone with clinical decisions.</b></h1>
-
-            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-            <button id="getStartedBtn" type="button" class="btn btn-primary btn-lg px-4 me-md-2">Get Started</button>
-            </div>
-        </div>
-
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5 first">
         {# REGISTRATION FORM #}
         {# When user clicks get started, this will pop up#}
         {% include "guest/registration-form.html" %}
-
         {# LOGIN FORM #}
         {# When user clicks get started, this will pop up#}
         {% include "guest/login-form.html" %}
         <div id="overlay" class="overlay"></div>
+    </div>
 
-</div>
+                
+<div class="container-body">
+    <div class="slides slide1">
+            <div class="row flex-lg-row-reverse align-items-center g-5 px-5 first">
+              <div class="col-10 col-sm-8 col-lg-6">
+                  <img src="{{url_for('static', filename='imgs_&_svgs/derma.svg')}}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700px" height="500px" loading="lazy">
+              </div>
 
-<div class="row flex-lg align-items-center g-5 py-5 second">
-        <div class="col-10 col-sm-8 col-lg-6">
-            <img src="{{url_for('static', filename='imgs_&_svgs/derma2.svg')}}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700px" height="500px" loading="lazy">
+                <div class="col-lg-6 py-2 px-5">
+                      <h1 class="display-6 fw-bold lh-3 mb-3 text-wrap" style="font-family: 'Questrial', sans-serif; color:black"> <b> Unlocking dermatological wisdom through information, guiding everyone with clinical decisions.</b></h1>
+
+                      <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                      <button id="getStartedBtn" type="button" class="btn btn-primary btn-lg px-4 me-md-2">Get Started</button>
+                      </div>
+                </div>
+
         </div>
-
-        <div class="col-lg-6 py-5 px-5">
-            <h1 class="display-6 fw-bold lh-3 mb-3 text-wrap" style="font-family: 'Questrial', sans-serif;"> <b> Catalyzing Quality Clinical Outcomes Through Innovative Healthcare Technology.</b></h1>
-
-
-            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-            <button id="knowMore" type="button" class="btn btn-primary btn-lg px-4 me-md-2">Know More</button>
-            </div>
-        </div>        
+    </div>
 </div>
+
+<div class="container-body">
+          <div class="slides slide2">
+              <div class="row flex-lg align-items-center g-5 py-4 px-5 second">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="{{url_for('static', filename='imgs_&_svgs/derma2.svg')}}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700px" height="500px" loading="lazy">
+                </div>
+
+                <div class="col-lg-6 py-5">
+                    <h1 class="display-6 fw-bold lh-3 mb-3 text-wrap" style="font-family: 'Questrial', sans-serif; color:black "> <b> Catalyzing Quality Clinical Outcomes Through Innovative Healthcare Technology.</b></h1>
+
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                    <button id="knowMore" type="button" class="btn btn-primary btn-lg px-4 me-md-2">Know More</button>
+                    </div>
+                </div>        
+            </div>
+          </div>
+  </div>
 
 {% endblock content%}
 

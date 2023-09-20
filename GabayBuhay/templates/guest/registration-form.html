@@ -18,27 +18,6 @@
                         <button type="button" class="btn-close" aria-label="Close"></button>
                     </div>
                 </div>
-                
-               <div class="row">
-                    <label for="acc_type">Account Type</label>
-                </div>
-
-                <div class="row">
-                <!-- Patient Radio Button -->
-                    <div class="col-6 input-field">
-                        <label class="modern-radio-label">
-                            <input type="radio" name="account_type" value="{{ roles[0]['role_id'] }}" id="patientRadio"/>
-                            <span>{{ roles[0]['role_name'] }}</span>
-                        </label>
-                    </div>
-                    <!-- Clinician Radio Button -->
-                    <div class="col-6 input-field">
-                        <label class="modern-radio-label">
-                            <input type="radio" name="account_type" value="{{ roles[1]['role_id'] }}" id="clinicianRadio"/>
-                            <span>{{ roles[1]['role_name']}}</span>
-                        </label>
-                    </div>
-                </div>
 
                 <div class="row">
                     <!-- First Name -->
@@ -71,14 +50,7 @@
                     <label for="pass">Confirm Password</label>
                     <input type="password" class="input" name="repeat_password" required/>
                 </div>
-
-                <!-- Upload License Div (Initially hidden, for CLINICIANS ONLY) -->
-                <div class="input-field" id="licenseDiv">
-                    <label for="license">Upload License</label>
-                    <input type="file" name="clinician_license" placeholder="Upload License"/>
-                </div>
-
-            
+  
                 <div class="input-field terms">
                     <label>
                         <input type="checkbox" name="agree_to_terms" required>
