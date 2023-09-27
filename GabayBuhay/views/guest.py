@@ -59,19 +59,10 @@ def log_in():
 
             # Successful login
             session['user_data'] = user_data
-
-            if user_data['role_id'] == 1:
-                return jsonify({'success': 'Patient login successful', 'redirect_url': url_for('patient_bp.patient_home')})
+            
+            return jsonify({'success': 'Patient login successful', 'redirect_url': url_for('patient_bp.patient_home')})
       
-      
-@guest_bp.route('/logout', methods=['GET', 'POST'])
-def logout():
-    # Remove session variables related to the user's login
-    session.pop('user_data', None)  # Remove user ID or any other relevant session variables
-    # Redirect the user to the login page or any other appropriate page
-    return redirect(url_for('guest_bp.index')) 
 
-
-@guest_bp.route('/clinical_solutions')
-def clinical_solutions():
-    return render_template('guest/clinical_solutions.html')
+@guest_bp.route('/about_us')
+def about_us():
+    return render_template('guest/about_us.html')

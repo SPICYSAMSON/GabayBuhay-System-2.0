@@ -1,0 +1,82 @@
+{% set guest = True %}
+{% extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/guest/about_us.css') }}">
+
+{% endblock head %}
+
+{% block title %}About Us{% endblock title %}
+
+{% block content %}
+
+    {# REGISTRATION FORM #}
+    {# When user clicks get started, this will pop up#}
+    {% include "guest/registration-form.html" %}
+    {# LOGIN FORM #}
+    {# When user clicks get started, this will pop up#}
+    {% include "guest/login-form.html" %}
+    <div id="overlay" class="overlay"></div>
+
+    <div class="container-body">
+        <div class="slides slide1">
+                <div class="row flex-lg-row-reverse align-items-center g-5 px-5 first">
+                    <div class="col-10 col-sm-8 col-lg-6">
+                        <img src="{{url_for('static', filename='imgs_&_svgs/ABOUT_IMAGE.svg')}}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" loading="lazy" style="margin-top: 20px;" width="600" height="500px">
+                    </div>
+
+                    <div class="col-lg-6 py-2 px-5">
+                        <h1 class="display-6 fw-bold lh-3 mb-3 text-center" style="font-family: 'Questrial', sans-serif; color:black"> <b> About Us</b></h1> <br>
+                        <h1 class="display-5 lh-3 mb-3 text-center" style="font-family: 'Questrial', sans-serif; color:black"> <b> Unlocking dermatological wisdom through information, guiding everyone with clinical decisions.</b></h1>
+
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                            <button id="getStartedBtn" type="button" class="btn btn-primary btn-lg px-4 me-md-2">Get Started</button>
+                            </div>
+                    </div>
+
+                </div>
+        </div>
+    </div>
+
+    <div class="container-body">
+        <div class="slides slide2"> 
+                <div class="row flex-lg-row px-5 first">
+                    <h1>What We Are</h1>
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</h4>
+
+
+                    <div class="image-container">
+                        <img src="{{url_for('static', filename='imgs_&_svgs/team3.jpg')}}" class="img-fluid" alt="Bootstrap Themes" loading="lazy">
+                    </div>
+
+                </div>
+        </div>
+    </div>
+
+    <div class="container-body">
+        <div class="slides slide3"> 
+                <div class="row flex-lg-row px-5 first">
+                    <h1>Meet Our Team</h1>
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</h4>
+
+
+                    <div class="image-container">
+                        <img src="{{url_for('static', filename='imgs_&_svgs/team3.jpg')}}" class="img-fluid" alt="Bootstrap Themes" loading="lazy">
+                    </div>
+
+                </div>
+        </div>
+    </div>
+
+ 
+
+{% endblock content %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>  
+    <script src="{{ url_for('static', filename='js/guest/index_script.js') }}"></script>
+{% endblock scripts %}
+ 
+
+

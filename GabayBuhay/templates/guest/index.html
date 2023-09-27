@@ -1,6 +1,5 @@
-{% set nonUser = True %}
+{% set guest = True %}
 {% extends "base.html" %}
-
 {% block head %}
     {# super() - the index.html inherits the contents of basehtml head block #}
     {{ super() }}
@@ -8,11 +7,9 @@
 
 {% endblock head %}
 
-{% block title %}GabayBuhay{% endblock title %}
+{% block title %}LichenCare{% endblock title %}
 
 {% block content %}
-
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5 first">
         {# REGISTRATION FORM #}
         {# When user clicks get started, this will pop up#}
         {% include "guest/registration-form.html" %}
@@ -20,28 +17,7 @@
         {# When user clicks get started, this will pop up#}
         {% include "guest/login-form.html" %}
         <div id="overlay" class="overlay"></div>
-    </div>
-
                 
-<div class="container-body">
-    <div class="slides slide1">
-            <div class="row flex-lg-row-reverse align-items-center g-5 px-5 first">
-              <div class="col-10 col-sm-8 col-lg-6">
-                  <img src="{{url_for('static', filename='imgs_&_svgs/derma.svg')}}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700px" height="500px" loading="lazy">
-              </div>
-
-                <div class="col-lg-6 py-2 px-5">
-                      <h1 class="display-6 fw-bold lh-3 mb-3 text-wrap" style="font-family: 'Questrial', sans-serif; color:black"> <b> Unlocking dermatological wisdom through information, guiding everyone with clinical decisions.</b></h1>
-
-                      <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                      <button id="getStartedBtn" type="button" class="btn btn-primary btn-lg px-4 me-md-2">Get Started</button>
-                      </div>
-                </div>
-
-        </div>
-    </div>
-</div>
-
 <div class="container-body">
           <div class="slides slide2">
               <div class="row flex-lg align-items-center g-5 py-4 px-5 second">
@@ -54,12 +30,104 @@
 
 
                     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                    <button id="knowMore" type="button" class="btn btn-primary btn-lg px-4 me-md-2">Know More</button>
+                    <button id="getStartedBtn" type="button" class="btn btn-primary btn-lg px-4 me-md-2">Get Started</button>
                     </div>
                 </div>        
             </div>
           </div>
-  </div>
+</div>
+
+  {# Section 1 #}
+    <div class="container-fluid px-4 py-5 text-center">
+      <div class="section section1">
+        <div class="lc-block mb-4">
+            <div editable="rich">
+                <h2 class="display-4 fw-bold">Enhance patient care and improvement outcomes with modern technology</h2>
+            </div>
+        </div>
+        <div class="lc-block col-lg-8 mx-auto">
+            <div editable="rich">
+                <p class="lead"><b>GabayBuhay offers a modern healthcare tool for dermatology to provide decisions support for patients and dermatologists with improved healthcare services</b></p>
+            </div>
+        </div>
+        
+
+        <div class="lc-block d-grid gap-2 d-sm-flex justify-content-sm-center mb-5"> <a class="btn btn-primary btn-lg px-4 gap-3" href="#" role="button" id="getStartedBtn1">Get to Know More!</a>
+        </div>
+
+        <div class="lc-block d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <img class="img-fluid custom-img-size" src="{{url_for('static', filename='imgs_&_svgs/Clinical_Solutions.svg')}}" width="" height="300" srcset="" sizes="" alt="">
+        </div>
+      </div>
+    </div>
+ 
+    {# Section 2 #}
+    <div class="container-fluid px-4 py-5 text-center">
+      <div class="section section2">
+        <div class="lc-block mb-4">
+            <div editable="rich">
+                <h2 class="display-4 fw-bold">Dermatology powered by Artificial Intelligence</h2>
+            </div>
+        </div>
+        <div class="lc-block col-lg-8 mx-auto">
+            <div editable="rich">
+                <p class="lead"><b>Machine Learning's trend is rising, and GabayBuhay saw this technology as the cornerstone in achieving improved healthcare quality outcomes. Have yourself a skin disease detector that can give an additional layer of screening.</b></p>
+            </div>
+        </div>
+
+        <div class="lc-block d-grid gap-2 d-sm-flex justify-content-sm-center mb-5"> <a class="btn btn-primary btn-lg px-4 gap-3" href="#" role="button" id="getStartedBtn2">Get Started</a>
+        </div>
+        <div class="lc-block d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <img class="img-fluid custom-img-size" src="{{url_for('static', filename='imgs_&_svgs/LichenCheck.svg')}}" width="" height="300" srcset="" sizes="" alt="">
+        </div>
+      </div>
+    </div>
+
+    {# Section 3 #}
+    <div class="container-fluid px-4 py-5 text-center">
+      <div class="section section3">
+        <div class="lc-block mb-4">
+            <div editable="rich">
+                <h2 class="display-4 fw-bold">Streamlined and increase patient throughput</h2>
+            </div>
+        </div>
+        <div class="lc-block col-lg-8 mx-auto">
+            <div editable="rich">
+                <p class="lead"><b>GabayBuhay offers a technology that provides a modern yet more efficient way of responsibly screening patients ahead of their appointment with a dermatologist. This saves time and improves patient throughput making it easy for the clinician to better recognize their patient.</b></p>
+            </div>
+        </div>
+
+        <div class="lc-block d-grid gap-2 d-sm-flex justify-content-sm-center mb-5"> <a class="btn btn-primary btn-lg px-4 gap-3" href="#" role="button" id="getStartedBtn3">Get Started</a>
+        </div>
+        <div class="lc-block d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <img class="img-fluid custom-img-size" src="{{url_for('static', filename='imgs_&_svgs/See_A_Doctor.svg')}}" width="" height="300" srcset="" sizes="" alt="">
+        </div>
+      </div>
+    </div>
+
+
+    {# Section 4 #}
+    <div class="container-fluid px-4 py-5 text-center">
+      <div class="section section4">
+        <div class="lc-block mb-4">
+            <div editable="rich">
+                <h2 class="display-4 fw-bold">Learn Dermatology in just a few clicks</h2>
+            </div>
+        </div>
+        <div class="lc-block col-lg-8 mx-auto">
+            <div editable="rich">
+                <p class="lead"><b>GabayBuhay extends its function as a Decision Support System by providing educational resources on multiple skin disorders ranging its rarity. This allows patients to make an informed decision about the skin condition diagnosis and learn dermatology with ease.</b></p>
+            </div>
+        </div>
+
+
+        <div class="lc-block d-grid gap-2 d-sm-flex justify-content-sm-center mb-5"> <a class="btn btn-primary btn-lg px-4 gap-3" href="#" role="button" id="getStartedBtn4">Get Started</a>
+        </div>
+        <div class="lc-block d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <img class="img-fluid custom-img-size" src="{{url_for('static', filename='imgs_&_svgs/DermAware.svg')}}" width="" height="300" srcset="" sizes="" alt="">
+        </div>
+      </div>
+    </div>
 
 {% endblock content%}
 

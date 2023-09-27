@@ -47,28 +47,7 @@ def register_user(user_data):
                 user_id = None  # Handle the case where no user is found
 
             # Check if you have a valid user_id and account_type
-            if user_id is not None and 'account_type' in user_data:
-                role_id =  user_data['account_type'][0]
-
-                query_three = text(
-                    "INSERT INTO user_roles (user_id, role_id) "
-                    "VALUES (:user_id, :role_id)"
-                )
-
-                # Execute the second query to insert user role data
-                conn.execute(
-                    query_three,
-                    {
-                        'user_id': user_id,
-                        'role_id': role_id,
-                    }
-                )
-
-            # Commit the transaction to save changes to the database
-            conn.commit()
-            
-            role_id_int = int(role_id)
-            if role_id_int == 1:
+            if user_id is not None:
                 insert_to_patient(user_data, user_id, conn)
 
 
@@ -117,17 +96,7 @@ def fetch_user(email):
                     'first_name' : user_data.first_name,
                     'last_name' : user_data.last_name
                 }
-            
-                query_two = text("SELECT role_id FROM user_roles WHERE user_id = :user_id")
-                result_two = conn.execute(query_two, 
-                                    {'user_id': user_data_dict['user_id']}
-                                        )
-                
-                role_id = result_two.fetchone()
-
-                # Extract the value from the tuple and add it to the dictionary
-                user_data_dict['role_id'] = role_id[0]
-                print(user_data_dict)
+                            
                 return user_data_dict
             else:
                 return None

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const log_in_nav = document.getElementById('log-in');
     const lichenCheckBtn = document.getElementById('lichenCheckBtn');
-    const dermAwareBtn = document.getElementById('dermAwareBtn');
+    const dermAwareBtn = document.getElementById('licheKnowBtn');
     const overlay = document.getElementById('overlay');
     const registrationFormPopup = document.getElementById('registrationFormPopup');
     const loginFormPopup = document.getElementById('loginFormPopup');
@@ -12,11 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const confirmPasswordField = document.querySelector('[name="repeat_password"]');
     const submitButton = document.querySelector('.submit');
     const closeButton = document.querySelector(".btn-close");
-    const getStartedBtn1 = document.getElementById('getStartedBtn1');
-    const getStartedBtn2 = document.getElementById('getStartedBtn2');
-    const getStartedBtn3 = document.getElementById('getStartedBtn3');
-    const getStartedBtn4 = document.getElementById('getStartedBtn4');
-    const getStartedBtn5 = document.getElementById('getStartedBtn5');
+
     
     if (loginFormPopup && registrationFormPopup) {
 
